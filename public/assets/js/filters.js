@@ -49,18 +49,14 @@
             });
     }
 
+    /* Filters only apply when the Search button is pressed — no live/instant refresh
+       while the customer is still choosing options. */
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         submitFilters();
     });
 
-    function bindAutoSubmit(el) {
-        el.addEventListener('change', function () { submitFilters(); });
-    }
-    form.querySelectorAll('select').forEach(bindAutoSubmit);
-    document.querySelectorAll('[form="' + form.id + '"]').forEach(bindAutoSubmit);
-
-    /* Purpose segmented toggle */
+    /* Purpose segmented toggle — just updates the pending selection, does not search yet */
     var purposeToggle = document.querySelector('[data-purpose-toggle]');
     var purposeInput = document.getElementById('purposeInput');
     if (purposeToggle && purposeInput) {
@@ -73,7 +69,6 @@
             btn.addEventListener('click', function () {
                 purposeInput.value = btn.dataset.val;
                 syncActive();
-                submitFilters();
             });
         });
         syncActive();

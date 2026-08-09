@@ -64,15 +64,41 @@ $content = $section['content'] ?? '';
         <?php break;
 
     case 'property-types': ?>
+        <?php
+        $typeIcons = [
+            'home' => '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/>',
+            'building' => '<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/>',
+            'villa' => '<path d="M4 20V11l8-6 8 6v9"/><path d="M4 20h16"/><circle cx="12" cy="14" r="2.4"/>',
+            'briefcase' => '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/>',
+            'office' => '<rect x="6" y="2" width="12" height="20" rx="1"/><path d="M9 6h1M14 6h1M9 10h1M14 10h1M9 14h1M14 14h1M9 18h1M14 18h1"/>',
+            'map-pin' => '<path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/>',
+            'tree' => '<path d="M12 2l4 6h-3l4 6h-3l3 5H8l3-5H8l4-6H9z"/><path d="M12 19v3"/>',
+            'store' => '<path d="M3 9l1-5h16l1 5"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/>',
+            'warehouse' => '<path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/>',
+            'land' => '<path d="M2 20l6-10 4 6 3-4 7 8z"/>',
+        ];
+        $typeColors = [
+            ['bg' => '#E4EBE8', 'fg' => '#00271A'],
+            ['bg' => '#F6E9E3', 'fg' => '#8B3A1F'],
+            ['bg' => '#FCF0DD', 'fg' => '#9C6B1F'],
+            ['bg' => '#E7EEEA', 'fg' => '#1F4A3A'],
+            ['bg' => '#F1E6E6', 'fg' => '#7A2E3A'],
+            ['bg' => '#E8EAEE', 'fg' => '#3D4A5C'],
+        ];
+        $allTypes = PropertyType::withCounts();
+        ?>
         <section class="section section-alt">
             <div class="container">
                 <div class="section-head"><div><span class="eyebrow">Browse</span><h2><?= e($heading ?: 'Browse by Property Type') ?></h2></div></div>
                 <div class="category-grid">
-                    <?php foreach (PropertyType::withCounts() as $t): ?>
+                    <?php foreach ($allTypes as $i => $t): ?>
+                        <?php $palette = $typeColors[$i % count($typeColors)]; ?>
                         <a class="category-tile" href="/properties?type=<?= e($t['slug']) ?>">
-                            <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></div>
-                            <div style="font-weight:600;font-size:14px;"><?= e($t['name']) ?></div>
-                            <div class="count"><?= (int) $t['property_count'] ?> listings</div>
+                            <div class="icon-wrap" style="background:<?= $palette['bg'] ?>;color:<?= $palette['fg'] ?>;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><?= $typeIcons[$t['icon']] ?? $typeIcons['home'] ?></svg>
+                            </div>
+                            <div class="category-tile-name"><?= e($t['name']) ?></div>
+                            <span class="count-badge" style="background:<?= $palette['bg'] ?>;color:<?= $palette['fg'] ?>;"><?= (int) $t['property_count'] ?> listing<?= (int) $t['property_count'] === 1 ? '' : 's' ?></span>
                         </a>
                     <?php endforeach; ?>
                 </div>
@@ -154,7 +180,7 @@ $content = $section['content'] ?? '';
                 <div class="cta-band">
                     <h2><?= e($heading ?: 'Ready to get started?') ?></h2>
                     <?php if ($sub): ?><p><?= e($sub) ?></p><?php endif; ?>
-                    <a class="btn btn-outline" style="background:#fff;color:var(--color-primary);border-color:#fff;" href="/contact">Contact Us</a>
+                    <a class="btn btn-outline" href="/contact">Contact Us</a>
                 </div>
             </div>
         </section>

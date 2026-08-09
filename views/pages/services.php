@@ -33,7 +33,7 @@ $icons = [
         <div class="cta-band">
             <h2>Ready to Get Started?</h2>
             <p>Speak with our team today and let us help with your next property move.</p>
-            <a class="btn btn-outline" style="background:#fff;color:var(--color-primary);border-color:#fff;" href="/contact">Contact Us</a>
+            <a class="btn btn-outline" href="/contact">Contact Us</a>
         </div>
     </div>
 </section>
