@@ -58,24 +58,6 @@
         });
     });
 
-    /* Mobile filter drawer */
-    var filterBtn = document.getElementById('mobileFilterBtn');
-    var filterSidebar = document.getElementById('filterSidebar');
-    var filterOverlay = document.getElementById('filterOverlay');
-    if (filterBtn && filterSidebar) {
-        filterBtn.addEventListener('click', function () {
-            filterSidebar.classList.add('open');
-            if (filterOverlay) filterOverlay.classList.add('open');
-        });
-        var closeFilters = function () {
-            filterSidebar.classList.remove('open');
-            if (filterOverlay) filterOverlay.classList.remove('open');
-        };
-        var filterClose = document.getElementById('filterCloseBtn');
-        if (filterClose) filterClose.addEventListener('click', closeFilters);
-        if (filterOverlay) filterOverlay.addEventListener('click', closeFilters);
-    }
-
     /* Simple contact / inquiry form AJAX submit with validation */
     document.querySelectorAll('form[data-ajax-form]').forEach(function (form) {
         form.addEventListener('submit', function (e) {

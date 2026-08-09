@@ -9,6 +9,9 @@ $logo = Settings::media('logo_media_id');
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Admin Login · <?= e($siteName) ?></title>
 <link rel="icon" href="<?= e($logo ?: asset('images/placeholder.svg')) ?>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 <link rel="stylesheet" href="<?= asset('css/base.css') ?>">
 <link rel="stylesheet" href="<?= asset('css/admin.css') ?>">
 </head>

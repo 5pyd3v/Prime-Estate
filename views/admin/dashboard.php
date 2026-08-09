@@ -6,13 +6,13 @@
 ob_start();
 
 $cards = [
-    ['label' => 'Total Properties', 'value' => $stats['properties_total'], 'icon' => 'home', 'color' => '#EEF0FE', 'fg' => '#2A3B8F'],
+    ['label' => 'Total Properties', 'value' => $stats['properties_total'], 'icon' => 'home', 'color' => '#EEF0FE', 'fg' => '#4F46E5'],
     ['label' => 'Published', 'value' => $stats['properties_published'], 'icon' => 'check-square', 'color' => '#E9F3EC', 'fg' => '#1E5E33'],
     ['label' => 'Featured', 'value' => $stats['properties_featured'], 'icon' => 'star', 'color' => '#FFF4E5', 'fg' => '#A15C00'],
     ['label' => 'Sold', 'value' => $stats['properties_sold'], 'icon' => 'briefcase', 'color' => '#F1EFEA', 'fg' => '#55534B'],
     ['label' => 'Rented', 'value' => $stats['properties_rented'], 'icon' => 'building', 'color' => '#EAF1FB', 'fg' => '#1E4E8C'],
     ['label' => 'New Inquiries', 'value' => $stats['inquiries_new'], 'icon' => 'inbox', 'color' => '#FBEAE8', 'fg' => '#A32E20'],
-    ['label' => 'Agents', 'value' => $stats['agents_total'], 'icon' => 'user', 'color' => '#EEF0FE', 'fg' => '#2A3B8F'],
+    ['label' => 'Agents', 'value' => $stats['agents_total'], 'icon' => 'user', 'color' => '#EEF0FE', 'fg' => '#4F46E5'],
     ['label' => 'Projects', 'value' => $stats['projects_total'], 'icon' => 'building', 'color' => '#E9F3EC', 'fg' => '#1E5E33'],
     ['label' => 'Blog Posts', 'value' => $stats['blog_total'], 'icon' => 'file-text', 'color' => '#FFF4E5', 'fg' => '#A15C00'],
     ['label' => 'Unread Messages', 'value' => $stats['messages_unread'], 'icon' => 'mail', 'color' => '#FBEAE8', 'fg' => '#A32E20'],
@@ -119,7 +119,7 @@ $svgIcons = [
         var x = padding + i * barWidth + barWidth * 0.2;
         var barW = barWidth * 0.6;
         var y = h - padding - barH;
-        ctx.fillStyle = '#2A3B8F';
+        ctx.fillStyle = '#4F46E5';
         ctx.beginPath();
         ctx.roundRect(x, y, barW, barH, 5);
         ctx.fill();

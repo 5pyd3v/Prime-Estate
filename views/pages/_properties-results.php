@@ -1,10 +1,15 @@
 <?php
 /** @var array $items */
 /** @var array $pagination */
+/** @var bool $showCount */
+$showCount = $showCount ?? true;
 ?>
-<div class="listing-count"><?= (int) $pagination['total'] ?> propert<?= $pagination['total'] === 1 ? 'y' : 'ies' ?> found</div>
+<span id="resultsMeta" data-total="<?= (int) $pagination['total'] ?>" hidden></span>
+<?php if ($showCount): ?>
+    <div class="listing-count"><?= (int) $pagination['total'] ?> propert<?= $pagination['total'] === 1 ? 'y' : 'ies' ?> found</div>
+<?php endif; ?>
 <?php if ($items): ?>
-    <div class="property-grid" style="margin-top:18px;">
+    <div class="property-grid" style="margin-top:<?= $showCount ? '18px' : '0' ?>;">
         <?php foreach ($items as $property): view('partials/property-card', ['property' => $property]); endforeach; ?>
     </div>
     <?php view('partials/pagination', ['pagination' => $pagination]); ?>

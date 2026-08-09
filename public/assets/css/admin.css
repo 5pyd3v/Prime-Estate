@@ -8,12 +8,12 @@
     --admin-border: #E6E8EC;
     --admin-text: #1B1E23;
     --admin-muted: #6B7280;
-    --admin-primary: #2A3B8F;
-    --admin-primary-dark: #1F2C6B;
-    --admin-sidebar-bg: #14161F;
-    --admin-sidebar-text: #C9CBD6;
-    --admin-sidebar-active: #2A3B8F;
-    --admin-radius: 12px;
+    --admin-primary: #4F46E5;
+    --admin-primary-dark: #3730A3;
+    --admin-sidebar-bg: #14121F;
+    --admin-sidebar-text: #C7C4D6;
+    --admin-sidebar-active: #4F46E5;
+    --admin-radius: 14px;
 }
 
 body.admin-body { background: var(--admin-bg); color: var(--admin-text); font-family: var(--font-sans); }
@@ -24,7 +24,7 @@ body.admin-body { background: var(--admin-bg); color: var(--admin-text); font-fa
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(160deg, #14161F 0%, #232744 55%, #2A3B8F 100%);
+    background: linear-gradient(160deg, #14121F 0%, #2A2340 55%, #4F46E5 100%);
     padding: 24px;
 }
 .auth-card {
@@ -41,7 +41,7 @@ body.admin-body { background: var(--admin-bg); color: var(--admin-text); font-fa
 .auth-card .sub { text-align: center; color: var(--admin-muted); font-size: 13.5px; margin-bottom: 26px; }
 .auth-card .btn-primary { background: var(--admin-primary); }
 .auth-card .btn-primary:hover { background: var(--admin-primary-dark); }
-.auth-card .form-control:focus { border-color: var(--admin-primary); box-shadow: 0 0 0 3px rgba(42,59,143,.15); }
+.auth-card .form-control:focus { border-color: var(--admin-primary); box-shadow: 0 0 0 3px rgba(79,70,229,.15); }
 .auth-foot { text-align: center; margin-top: 20px; font-size: 12.5px; color: var(--admin-muted); }
 
 /* ---------- Shell ---------- */

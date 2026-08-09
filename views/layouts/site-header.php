@@ -34,6 +34,9 @@ $radius = Settings::get('border_radius', '14');
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="<?= e($favicon ?: asset('images/placeholder.svg')) ?>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 <link rel="stylesheet" href="<?= asset('css/base.css') ?>">
 <link rel="stylesheet" href="<?= asset('css/components.css') ?>">
 <style>
