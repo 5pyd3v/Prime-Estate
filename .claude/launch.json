@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "realestate-cms",
+      "runtimeExecutable": "C:\\xampp\\php\\php.exe",
+      "runtimeArgs": ["-S", "localhost:8000", "-t", "public", "public/router.php"],
+      "port": 8000
+    }
+  ]
+}

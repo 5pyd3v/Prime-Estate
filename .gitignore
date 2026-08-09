@@ -1,0 +1,7 @@
+.env
+/public/uploads/*
+!/public/uploads/.gitkeep
+!/public/uploads/*/.gitkeep
+*.log
+.DS_Store
+Thumbs.db
